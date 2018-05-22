@@ -39,3 +39,16 @@ function getCookie(cname) {
     return "";
 }
 // __3 CHECK A COOKIE
+function checkCookie() {
+    var username = getCookie("username");
+    if (username != "") {
+        // If the cookie is set it will display a greeting.
+        alert("Welcome again " + username);
+    } else {
+        // If the cookie is not set, it will display a prompt box, asking for the name of the user, and stores the username cookie for 365 days, by calling the setCookie function:
+        username = prompt("Please enter your name:", "");
+        if (username != "" && username != null) {
+            setCookie("username", username, 365);
+        }
+    }
+}
